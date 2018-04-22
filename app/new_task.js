@@ -15,7 +15,9 @@ amqp.connect('amqp://localhost', function(err, connection) {
         const msg = process.argv.slice(2).join(' ') || DEFAULT_QUEUE_MESSAGE;
 
         channel.assertQueue(TASK_QUEUE_NAME, { durable: true });
+
         channel.sendToQueue(TASK_QUEUE_NAME, new Buffer(msg), { persistent: true });
+
         console.log(` [x] Sent '${msg}'`);
     });
 

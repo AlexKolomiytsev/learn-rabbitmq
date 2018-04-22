@@ -13,6 +13,7 @@ amqp.connect('amqp://localhost', function(err, connection) {
 
     connection.createChannel(function(err, channel) {
         channel.assertQueue(TASK_QUEUE_NAME, { durable: true });
+        channel.prefetch(2);
 
         console.log(` [*] Waiting for messages in '${TASK_QUEUE_NAME}'. To exit press CTRL+C`);
 
@@ -23,9 +24,10 @@ amqp.connect('amqp://localhost', function(err, connection) {
 
             setTimeout(() => {
                 console.log('     [x] Done.');
+                channel.ack(msg);
             }, secs * 1000);
 
-        }, { noAck: true });
+        }, { noAck: false });
 
     });
 
