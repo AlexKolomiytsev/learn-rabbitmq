@@ -1,0 +1,23 @@
+{
+  "name": "learn-rabbitmq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "send.js",
+  "dependencies": {
+    "amqplib": "^0.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKolomiytsev/learn-rabbitmq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKolomiytsev/learn-rabbitmq/issues"
+  },
+  "homepage": "https://github.com/AlexKolomiytsev/learn-rabbitmq#readme"
+}
